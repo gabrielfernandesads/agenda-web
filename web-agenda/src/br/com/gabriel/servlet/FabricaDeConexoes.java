@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class FabricaDeConexoes  {
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		//problemao
 		//nesse tomcat foi necessario registrar Driver, o parece já ser obsoleto..
 		try{  
