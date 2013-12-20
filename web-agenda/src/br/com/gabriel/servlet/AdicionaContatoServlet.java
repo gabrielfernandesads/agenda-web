@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 		HttpServletResponse response)
 		throws IOException, ServletException {
 		// busca o writer
+			
 		PrintWriter out = response.getWriter();
 		
 		// buscando os parâmetros no request
@@ -50,8 +51,6 @@ import javax.servlet.http.HttpServletResponse;
 		try {
 			dao = new ContatoDao();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		dao.adiciona(contato);
 		
@@ -59,7 +58,7 @@ import javax.servlet.http.HttpServletResponse;
 		out.println("<html>");
 		out.println("<body>");
 		out.println("Contato " + contato.getNome() +
-				" adicionado com sucesso");
+				" adicionado com sucesso!");
 		out.println("</body>");
 		out.println("</html>");
 		}
