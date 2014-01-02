@@ -3,16 +3,17 @@ package br.com.gabriel.servlet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-public class FabricaDeConexoes  {
+//Capítulo-2 Conectar Java com Banco de Dados
+public class FabricaDeConexoes {
 
 	public static Connection getConnection() {
-		//problemao
-		//nesse tomcat foi necessario registrar Driver, o parece já ser obsoleto..
+		//DriverManager, classe que posssui os métodos p/se conectar ao Banco
+		//como: .getConnection e .registerDriver
 		try{  
-			//nesse tomcat foi necessario registrar Driver, o parece já ser obsoleto..
+			//Use esse método p/ registrar o nome do Banco se a versão do Tomcat exigir
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            //na pratica só seria necessario essa linha
+            //Esse método acessa o banco passando como parametro:
+            //("jdbc:nomedobanco://local:porta/bancocriado","user","senha")
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","cancer");  
               
         }catch(SQLException e){  

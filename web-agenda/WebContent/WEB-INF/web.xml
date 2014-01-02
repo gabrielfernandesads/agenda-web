@@ -12,20 +12,25 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	<!-- Registra a Servlet -->
 	<servlet>
 		<servlet-name>servletOlaMundo</servlet-name>
-		<servlet-class>br.com.gabriel.servlet.OlaMundo</servlet-class>
+		<servlet-class>br.com.gabriel.servlet.OlaMundoServlet</servlet-class>
 	</servlet>
+	<!-- Mapeia a Url que chamará a Servlet -->
 	<servlet-mapping>
 		<servlet-name>servletOlaMundo</servlet-name>
 		<url-pattern>/oi</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Registra a Servlet -->
 	<servlet>
 	<servlet-name>AdicionaContato</servlet-name>
 	<servlet-class>
 	br.com.gabriel.servlet.AdicionaContatoServlet
 	</servlet-class>
 	</servlet>
+	<!-- Mapeia a Url que chamará a Servlet -->
 	<servlet-mapping>
 	<servlet-name>AdicionaContato</servlet-name>
 	<url-pattern>/adicionaContato</url-pattern>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="br.com.gabriel.servlet.Contato,br.com.gabriel.servlet.ContatoDao,java.util.List" %>
+<!-- Capítulo-6 Jsp -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,8 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+    <h1>Lista de Contatos</h1><br/>
 	<table>
-	<h1>Lista de Contatos</h1><br />
 		<%
 			ContatoDao dao = new ContatoDao();
 			List<Contato> contatos = dao.getLista();

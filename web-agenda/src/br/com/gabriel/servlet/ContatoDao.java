@@ -8,31 +8,37 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-
+//Capítulo-2 Dao
+//Métodos típicos que interagem com o banco de dados
+//famoso CRUD..adiciona,pesquisa,atualiza,deleta
 public class ContatoDao {
 	Connection conexao;
-
-	public ContatoDao() throws ClassNotFoundException {
+//Construtor: sempre que Contato Dao for instanciado é construído uma conexão com o Banco
+//E atribuido a váriavel "conexao", que deve ser do tipo Connection
+	public ContatoDao(){
 		new FabricaDeConexoes();
 		this.conexao = FabricaDeConexoes.getConnection();
 	}
-
+    //metodos que vão interagir com o banco
+	//Passo como parametro o objeto que desejo add no Banco
 	public void adiciona(Contato contato) {
-
+        //comando sql
 		String sql = "insert into contatos"
 				+ "(nome,email,endereco,dataNascimento)" + "values(?,?,?,?)";
-
+        //crio um objeto do tipo PreparedStatement para receber o comando sql desejado
+		//e setar os valores passados no formulário
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
-
+            //método set exige como parameto(indice,atributo do objeto)
 			stmt.setString(1, contato.getNome());
 			stmt.setString(2, contato.getEmail());
 			stmt.setString(3, contato.getEndereco());
 			stmt.setDate(4, new Date(contato.getDataNascimento()
 					.getTimeInMillis()));
-
+			
+            //executa ação no Banco
 			stmt.execute();
+			//fecha conexão com Banco
 			stmt.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

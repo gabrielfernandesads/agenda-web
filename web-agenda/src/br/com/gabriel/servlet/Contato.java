@@ -1,14 +1,14 @@
 package br.com.gabriel.servlet;
 
 import java.util.Calendar;
-
+//Capítulo-2 Javabeans
 public class Contato {
 	private Long id;
 	private String nome;
 	private String email;
 	private String endereco;
 	private Calendar dataNascimento;
-
+//Encapsulamento
 	public Long getId() {
 		return this.id;
 	}
