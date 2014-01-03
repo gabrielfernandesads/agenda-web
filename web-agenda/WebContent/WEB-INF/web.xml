@@ -35,4 +35,17 @@
 	<servlet-name>AdicionaContato</servlet-name>
 	<url-pattern>/adicionaContato</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Registra a Servlet -->
+	<servlet>
+	<servlet-name>controlador</servlet-name>
+	<servlet-class>
+	br.com.gabriel.servlet.ControllerServlet
+	</servlet-class>
+	</servlet>
+	<!-- Mapeia a Url que chamará a Servlet -->
+	<servlet-mapping>
+	<servlet-name>controlador</servlet-name>
+	<url-pattern>/mvc</url-pattern>
+	</servlet-mapping>
 </web-app>

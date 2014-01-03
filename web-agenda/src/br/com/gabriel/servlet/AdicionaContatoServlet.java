@@ -63,6 +63,7 @@ import javax.servlet.http.HttpServletResponse;
 		out.println("</body>");
 		out.println("</html>");*/
 		
+		//Capítulo-9 Mcv
 		//RequestDispatcher retira todo o código html dessa página
 		RequestDispatcher rd = request
 		.getRequestDispatcher("/contato-adicionado.jsp");//direciona p/pagina q contem a resposta html
